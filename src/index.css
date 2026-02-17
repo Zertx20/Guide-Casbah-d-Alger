@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:wght@300;400;500;700&display=swap');
+@import './styles/zakhrafa.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 96%;
+    --foreground: 150 30% 12%;
+
+    --card: 40 30% 98%;
+    --card-foreground: 150 30% 12%;
+
+    --popover: 40 30% 98%;
+    --popover-foreground: 150 30% 12%;
+
+    --primary: 150 35% 22%;
+    --primary-foreground: 40 30% 98%;
+
+    --secondary: 38 40% 90%;
+    --secondary-foreground: 150 30% 12%;
+
+    --muted: 38 25% 92%;
+    --muted-foreground: 150 10% 45%;
+
+    --accent: 42 75% 55%;
+    --accent-foreground: 150 35% 12%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 38 25% 85%;
+    --input: 38 25% 85%;
+    --ring: 150 35% 22%;
+
+    --radius: 0.5rem;
+
+    --sand: 38 35% 88%;
+    --sand-light: 40 33% 96%;
+    --gold: 42 75% 55%;
+    --gold-dark: 38 60% 42%;
+    --green-deep: 150 35% 22%;
+    --green-medium: 150 25% 35%;
+    --cream: 40 40% 97%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 150 20% 8%;
+    --foreground: 40 30% 95%;
+    --card: 150 20% 10%;
+    --card-foreground: 40 30% 95%;
+    --popover: 150 20% 10%;
+    --popover-foreground: 40 30% 95%;
+    --primary: 42 75% 55%;
+    --primary-foreground: 150 35% 12%;
+    --secondary: 150 15% 18%;
+    --secondary-foreground: 40 30% 95%;
+    --muted: 150 15% 15%;
+    --muted-foreground: 40 15% 60%;
+    --accent: 42 75% 55%;
+    --accent-foreground: 150 35% 12%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 150 15% 20%;
+    --input: 150 15% 20%;
+    --ring: 42 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+
+  /* Creative Font Classes */
+  .font-cinzel { font-family: 'Cinzel', serif; }
+  .font-playfair { font-family: 'Playfair Display', serif; }
+  .font-bebas { font-family: 'Bebas Neue', cursive; }
+  .font-dancing { font-family: 'Dancing Script', cursive; }
+  .font-great-vibes { font-family: 'Great Vibes', cursive; }
+  .font-philosopher { font-family: 'Philosopher', sans-serif; }
+  .font-tangerine { font-family: 'Tangerine', cursive; }
+  .font-libre-baskerville { font-family: 'Libre Baskerville', serif; }
+  .font-crimson { font-family: 'Crimson Text', serif; }
+  .font-old-standard { font-family: 'Old Standard TT', serif; }
+}
+
+@layer utilities {
+  .text-gold-gradient {
+    background: linear-gradient(135deg, hsl(42 75% 55%), hsl(38 60% 42%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-zakhrafa-hero {
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a96e' fill-opacity='0.06'%3E%3Cpath d='M40 0l40 40-40 40L0 40z M40 10l30 30-30 30L10 40z M40 20l20 20-20 20L20 40z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .shadow-gold {
+    box-shadow: 0 4px 20px -4px hsl(42 75% 55% / 0.3);
+  }
+
+  .shadow-elegant {
+    box-shadow: 0 10px 40px -12px hsl(150 35% 22% / 0.15);
+  }
+
+  /* Scroll Animation Classes */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .animate-on-scroll-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .animate-on-scroll-left.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .animate-on-scroll-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .animate-on-scroll-right.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .animate-on-scroll-scale {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .animate-on-scroll-scale.is-visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .animate-on-scroll-rotate {
+    opacity: 0;
+    transform: rotate(-10deg) scale(0.9);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .animate-on-scroll-rotate.is-visible {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+
+  /* Text Shadow Utilities */
+  .text-shadow-sm {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  .text-shadow-md {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+  }
+
+  .text-shadow-xl {
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);
+  }
+
+  .text-shadow-gold {
+    text-shadow: 2px 2px 4px rgba(212, 175, 55, 0.3), 1px 1px 2px rgba(0, 0, 0, 0.8);
+  }
+
+  .text-shadow-white {
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3), 1px 1px 2px rgba(0, 0, 0, 0.8);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
