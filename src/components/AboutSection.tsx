@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import guidePortrait from "@/assets/guide-new-portrait.jpg";
+import guidePortrait from "@/blank-profile-picture-973460_1280.webp";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const AboutSection = () => {
